@@ -1,0 +1,68 @@
+.contactForm {
+  width: 540px;
+  border-radius: 10px;
+  border: solid 2px black;
+  padding: 15px;
+  box-sizing: border-box;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.nameInput,
+.phoneInput {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 15px 10px;
+  font-size: 26px;
+  font-family: inherit;
+  font-size: 26px;
+  font-family: inherit;
+}
+
+.nameInput:focus,
+.nameInput:active,
+.phoneInput:focus,
+.phoneInput:active {
+  border-color: blue;
+  outline: none;
+}
+
+.nameLabel,
+.phoneLabel {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.formButton {
+  display: block;
+  width: 180px;
+  height: 55px;
+  font-size: 28px;
+  font-weight: 500;
+  padding: 0;
+  border: solid 2px black;
+  border-radius: 5px;
+  background-color: rgb(232, 229, 229);
+  margin: 15px auto 0 auto;
+}
+
+.formButton:hover,
+.formButton:focus {
+  outline: none;
+  border-color: black;
+  background-color: rgb(205, 203, 203);
+}

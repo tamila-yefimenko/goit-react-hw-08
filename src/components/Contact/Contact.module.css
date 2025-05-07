@@ -1,0 +1,42 @@
+.contactItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: solid 2px black;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.contactItem:not(last-child) {
+  margin-bottom: 10px;
+}
+
+.name,
+.phone {
+  font-size: 30px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.contactButton {
+  display: block;
+  width: 110px;
+  height: 55px;
+  font-size: 28px;
+  font-weight: 500;
+  padding: 0;
+  border: solid 2px black;
+  border-radius: 5px;
+  background-color: rgb(232, 229, 229);
+}
+
+.contactButton:hover,
+.contactButton:focus {
+  outline: none;
+  border-color: black;
+  background-color: rgb(205, 203, 203);
+}
+
+.icon {
+  margin-right: 15px;
+}
