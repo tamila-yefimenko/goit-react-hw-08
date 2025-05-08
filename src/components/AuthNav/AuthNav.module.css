@@ -1,0 +1,10 @@
+.link {
+  color: rgb(106, 50, 190);
+  font-size: 26px;
+  text-decoration: none;
+}
+
+.active {
+  color: rgb(0, 102, 255);
+  text-decoration: underline;
+}
