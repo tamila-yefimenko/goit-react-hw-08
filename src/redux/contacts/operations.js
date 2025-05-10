@@ -39,9 +39,9 @@ export const deleteContact = createAsyncThunk(
 
 export const updateContact = createAsyncThunk(
   'updateContact',
-  async (body, thunkAPI) => {
+  async ({ id, ...updateData }, thunkAPI) => {
     try {
-      const response = await goitAPI.patch(`/contacts/${body.id}`, body);
+      const response = await goitAPI.patch(`/contacts/${id}`, updateData);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

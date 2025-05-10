@@ -1,68 +1,94 @@
 .contactItem {
-  background-color: #fefcff;
-  border: 1px solid #ddd;
-  border-left: 4px solid #8e5adf;
-  border-radius: 8px;
-  padding: 1rem;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 350px;
-  min-width: 280px;
+  border: 2px solid #a26bfa;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(162, 107, 250, 0.1);
+  max-width: 300px;
 }
 
 .contactWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+  margin-bottom: 12px;
 }
 
 .name,
 .phone {
-  font-size: 1rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  margin: 6px 0;
+  font-size: 16px;
+  color: #333;
 }
 
 .icon {
-  color: #5e2b97;
+  margin-right: 8px;
+  color: #7c4dff;
 }
 
 .buttonGroup {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: stretch;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
-.editButton {
-  background-color: #8e5adf;
+.editButton,
+.contactButton,
+.saveButton,
+.cancelButton {
+  padding: 6px 12px;
   border: none;
-  padding: 0.5rem 1rem;
-  color: white;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 0.9rem;
-  transition: background-color 0.3s;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-.editButton:hover {
-  background-color: #5e2b97;
+.editButton,
+.saveButton {
+  background-color: #7c4dff;
+  color: #fff;
+}
+
+.cancelButton {
+  background-color: #e0e0e0;
+  color: #333;
 }
 
 .contactButton {
-  background-color: #d12257;
-  border: none;
-  padding: 0.5rem 1rem;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: background-color 0.3s;
+  background-color: #d32f2f;
+  color: #fff;
+}
+
+.editButton:hover,
+.saveButton:hover {
+  background-color: #651fff;
+}
+
+.cancelButton:hover {
+  background-color: #bdbdbd;
 }
 
 .contactButton:hover {
-  background-color: #a3163f;
+  background-color: #b71c1c;
+}
+
+.input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.input:focus {
+  border-color: #7c4dff;
+  box-shadow: 0 0 0;
 }

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { deleteContact, updateContact } from '../../redux/contacts/operations';
 import { FaUser, FaPhone } from 'react-icons/fa6';
 import s from './Contact.module.css';
+import toast from 'react-hot-toast';
 
 const Contact = ({ contact }) => {
   const dispatch = useDispatch();
@@ -31,6 +32,11 @@ const Contact = ({ contact }) => {
     setEditedName(contact.name);
     setEditedNumber(contact.number);
     setIsEditing(false);
+  };
+
+  const handleDelete = () => {
+    dispatch(deleteContact(contact.id));
+    toast.success('Сontact successfully deleted!');
   };
 
   return (
@@ -94,7 +100,7 @@ const Contact = ({ contact }) => {
         )}
         <button
           className={s.contactButton}
-          onClick={() => dispatch(deleteContact(contact.id))}
+          onClick={handleDelete}
           disabled={isLoading}
         >
           Delete

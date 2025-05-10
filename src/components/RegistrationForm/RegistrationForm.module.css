@@ -120,3 +120,8 @@ html {
 .btn:hover {
   background-color: #5e2b97;
 }
+
+.errorMessage {
+  color: #8e5adf;
+  font-size: 0.9rem;
+}

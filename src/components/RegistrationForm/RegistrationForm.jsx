@@ -1,8 +1,21 @@
-import { Field, Form, Formik } from 'formik';
+import { Field, Form, Formik, ErrorMessage } from 'formik';
 import s from './RegistrationForm.module.css';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { registerThunk } from '../../redux/auth/operations';
+import * as Yup from 'yup';
+
+const FeedbackSchema = Yup.object().shape({
+  name: Yup.string()
+    .min(3, 'Too Short!')
+    .max(20, 'Too Long!')
+    .required('Required'),
+  email: Yup.string().email('Invalid email address').required('Required'),
+  password: Yup.string()
+    .min(7, 'Too Short!')
+    .max(20, 'Too Long!')
+    .required('Required'),
+});
 
 const RegistrationForm = () => {
   const dispatch = useDispatch();
@@ -26,7 +39,11 @@ const RegistrationForm = () => {
         </div>
         <div className={s.card}>
           <div className={s.cardBody}>
-            <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+            <Formik
+              initialValues={initialValues}
+              onSubmit={handleSubmit}
+              validationSchema={FeedbackSchema}
+            >
               <Form>
                 <fieldset className={s.fieldset}>
                   <label>Name</label>
@@ -36,6 +53,11 @@ const RegistrationForm = () => {
                     className={s.input}
                     placeholder="Name"
                   />
+                  <ErrorMessage
+                    name="name"
+                    component="span"
+                    className={s.errorMessage}
+                  />
                   <label>Email</label>
                   <Field
                     type="email"
@@ -43,12 +65,22 @@ const RegistrationForm = () => {
                     className={s.input}
                     placeholder="Email"
                   />
+                  <ErrorMessage
+                    name="email"
+                    component="span"
+                    className={s.errorMessage}
+                  />
                   <label>Password</label>
                   <Field
                     type="password"
                     name="password"
                     className={s.input}
                     placeholder="Password"
+                  />
+                  <ErrorMessage
+                    name="password"
+                    component="span"
+                    className={s.errorMessage}
                   />
                   <div>
                     <Link to="/login" className={s.link}>
