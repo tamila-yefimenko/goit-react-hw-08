@@ -1,0 +1,12 @@
+.notFoundWrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f3ff;
+  color: #6b21a8;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 2rem;
+}

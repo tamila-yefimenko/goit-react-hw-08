@@ -1,26 +1,26 @@
 .filterInputWrapper {
-  width: 540px;
-  margin-bottom: 40px;
-  text-align: left;
-  font-size: 30px;
-  font-weight: 500;
+  margin-top: 2rem;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .inputTitle {
-  width: 100%;
+  font-weight: 600;
+  color: #5e2b97;
 }
 
 .filterInput {
-  box-sizing: border-box;
-  width: 100%;
-  border-radius: 10px;
-  padding: 15px 10px;
-  font-size: 26px;
-  font-family: inherit;
+  padding: 0.5rem;
+  border: 1px solid #c5b8e6;
+  border-radius: 6px;
+  font-size: 1rem;
 }
 
-.filterInput:focus,
-.filterInput:active {
-  border-color: blue;
+.filterInput:focus {
   outline: none;
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }

@@ -1,10 +1,21 @@
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
 .link {
-  color: rgb(106, 50, 190);
-  font-size: 26px;
+  color: #e0d1f8;
   text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.link:hover {
+  color: #ffffff;
 }
 
 .active {
-  color: rgb(0, 102, 255);
-  text-decoration: underline;
+  color: #ffffff;
+  border-bottom: 2px solid #fff;
 }

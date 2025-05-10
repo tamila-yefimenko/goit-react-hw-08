@@ -1,4 +1,30 @@
+.contactContainer {
+  max-width: 640px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 .contactList {
-  list-style-type: none;
-  width: 540px;
+  display: grid;
+  grid-template-columns: 1fr; /* один стовпчик за замовчуванням */
+  gap: 1.5rem;
+  padding: 2rem 0;
+  list-style: none;
+  margin: 0 auto;
+  padding-left: 0;
+  justify-items: center;
+}
+
+@media (min-width: 768px) {
+  .contactList {
+    grid-template-columns: 1fr 1fr; /* два стовпчики для більших екранів */
+  }
+}
+
+.loading,
+.error {
+  margin-top: 1rem;
+  color: #8e5adf;
+  font-weight: bold;
+  text-align: center;
 }

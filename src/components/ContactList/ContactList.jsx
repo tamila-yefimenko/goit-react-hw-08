@@ -5,7 +5,9 @@ import {
   selectError,
   selectFilteredContacts,
   selectLoading,
-} from '../../redux/contactsSlice';
+} from '../../redux/contacts/selectors';
+import ContactForm from '../ContactForm/ContactForm';
+import SearchBox from '../SearchBox/SearchBox';
 
 const ContactList = () => {
   const loading = useSelector(selectLoading);
@@ -13,7 +15,9 @@ const ContactList = () => {
   const filteredContacts = useSelector(selectFilteredContacts);
 
   return (
-    <div>
+    <div className={s.contactContainer}>
+      <ContactForm />
+      <SearchBox />
       <ul className={s.contactList}>
         {filteredContacts.map(contact => (
           <li key={contact.id}>
