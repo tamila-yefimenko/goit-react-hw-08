@@ -5,14 +5,17 @@ import {
   fetchContacts,
   updateContact,
 } from './operations';
+import { logoutThunk } from '../auth/operations';
+
+const initialState = {
+  items: [],
+  isLoading: false,
+  error: null,
+};
 
 const contactsSlice = createSlice({
   name: 'contacts',
-  initialState: {
-    items: [],
-    isLoading: false,
-    error: null,
-  },
+  initialState,
   reducers: {},
   extraReducers: builder => {
     builder
@@ -22,6 +25,7 @@ const contactsSlice = createSlice({
       .addCase(addContact.fulfilled, (state, action) => {
         state.items.push(action.payload);
       })
+      .addCase(logoutThunk.fulfilled, () => initialState)
       .addCase(deleteContact.fulfilled, (state, action) => {
         state.items = state.items.filter(
           contact => contact.id !== action.payload

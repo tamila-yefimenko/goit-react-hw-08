@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { loginThunk } from '../../redux/auth/operations';
 import * as Yup from 'yup';
+import toast from 'react-hot-toast';
 
 const FeedbackSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email address').required('Required'),
@@ -20,9 +21,14 @@ const LoginForm = () => {
     password: '',
   };
 
-  const handleSubmit = (values, actions) => {
-    dispatch(loginThunk(values));
-    actions.resetForm();
+  const handleSubmit = async (values, actions) => {
+    try {
+      await dispatch(loginThunk(values)).unwrap();
+      actions.resetForm();
+    } catch (error) {
+      console.log(error);
+      toast.error('Invalid email or password. Please, try again.');
+    }
   };
 
   return (

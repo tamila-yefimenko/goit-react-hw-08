@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { registerThunk } from '../../redux/auth/operations';
 import * as Yup from 'yup';
+import toast from 'react-hot-toast';
 
 const FeedbackSchema = Yup.object().shape({
   name: Yup.string()
@@ -25,9 +26,16 @@ const RegistrationForm = () => {
     password: '',
   };
 
-  const handleSubmit = (values, actions) => {
-    dispatch(registerThunk(values));
-    actions.resetForm();
+  const handleSubmit = async (values, actions) => {
+    try {
+      await dispatch(registerThunk(values)).unwrap();
+      actions.resetForm();
+    } catch (error) {
+      console.log(error);
+      toast.error(
+        'A user with this email is already registered. Please, try again.'
+      );
+    }
   };
 
   return (
