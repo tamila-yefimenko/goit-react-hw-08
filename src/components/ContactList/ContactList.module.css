@@ -6,7 +6,7 @@
 
 .contactList {
   display: grid;
-  grid-template-columns: 1fr; /* один стовпчик за замовчуванням */
+  grid-template-columns: 1fr;
   gap: 1.5rem;
   padding: 2rem 0;
   list-style: none;
@@ -17,7 +17,7 @@
 
 @media (min-width: 768px) {
   .contactList {
-    grid-template-columns: 1fr 1fr; /* два стовпчики для більших екранів */
+    grid-template-columns: 1fr 1fr;
   }
 }
 

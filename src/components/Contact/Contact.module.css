@@ -5,10 +5,10 @@
   border: 2px solid #a26bfa;
   border-radius: 12px;
   padding: 16px;
-  margin: 12px;
   background-color: #ffffff;
   box-shadow: 0 4px 12px rgba(162, 107, 250, 0.1);
-  max-width: 300px;
+  width: 255px;
+  height: 160px;
 }
 
 .contactWrapper {
@@ -20,7 +20,7 @@
   display: flex;
   align-items: center;
   margin: 6px 0;
-  font-size: 16px;
+  font-size: 20px;
   color: #333;
 }
 
