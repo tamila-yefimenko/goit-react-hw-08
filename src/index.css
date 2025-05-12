@@ -7,3 +7,9 @@ textarea:focus,
 select:focus {
   outline: none;
 }
+
+.swal2-custom {
+  width: 320px !important;
+  height: 200px !important;
+  font-size: 14px;
+}

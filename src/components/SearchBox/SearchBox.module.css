@@ -1,5 +1,5 @@
 .filterInputWrapper {
-  margin-top: 2rem;
+  margin: 2rem auto 0 auto;
   max-width: 600px;
   display: flex;
   flex-direction: column;

@@ -4,6 +4,8 @@ import { deleteContact, updateContact } from '../../redux/contacts/operations';
 import { FaUser, FaPhone } from 'react-icons/fa6';
 import s from './Contact.module.css';
 import toast from 'react-hot-toast';
+import Swal from 'sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
 
 const Contact = ({ contact }) => {
   const dispatch = useDispatch();
@@ -35,8 +37,23 @@ const Contact = ({ contact }) => {
   };
 
   const handleDelete = () => {
-    dispatch(deleteContact(contact.id));
-    toast.success('Сontact successfully deleted!');
+    Swal.fire({
+      title: 'Are you sure?',
+      text: `Delete contact "${contact.name}"?`,
+      showCancelButton: true,
+      confirmButtonColor: '#5e2b97',
+      cancelButtonColor: '#7c4dff',
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'Cancel',
+      customClass: {
+        popup: 'swal2-custom',
+      },
+    }).then(result => {
+      if (result.isConfirmed) {
+        dispatch(deleteContact(contact.id));
+        toast.success('Contact successfully deleted!');
+      }
+    });
   };
 
   return (

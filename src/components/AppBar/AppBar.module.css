@@ -1,6 +1,7 @@
 .appBar {
   display: flex;
   justify-content: space-between;
+  gap: 0.75rem;
   align-items: center;
   padding: 1rem 2rem;
   background-color: #5e2b97;
