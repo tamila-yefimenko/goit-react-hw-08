@@ -1,5 +1,4 @@
 import Contact from '../Contact/Contact';
-import { useSelector } from 'react-redux';
 import s from './ContactList.module.css';
 import {
   selectError,

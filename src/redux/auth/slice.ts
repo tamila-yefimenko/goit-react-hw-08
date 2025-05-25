@@ -5,6 +5,7 @@ import {
   logoutThunk,
   refreshThunk,
 } from './operations.js';
+import { AuthState } from '../../components/App/App.types.js';
 
 const initialState: AuthState = {
   user: {

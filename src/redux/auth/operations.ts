@@ -1,6 +1,14 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { string } from 'yup';
+import { RootState } from '../store';
+import {
+  RegisterResponse,
+  RegisterBody,
+  LoginResponse,
+  LoginBody,
+  refreshResponse,
+} from '../../components/App/App.types';
 
 export const goitAPI = axios.create({
   baseURL: 'https://connections-api.goit.global',
