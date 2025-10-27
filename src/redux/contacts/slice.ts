@@ -4,9 +4,9 @@ import {
   deleteContact,
   fetchContacts,
   updateContact,
-} from './operations.js';
-import { logoutThunk } from '../auth/operations.js';
-import { ContactState } from '../../components/App/App.types.js';
+} from './operations';
+import { logoutThunk } from '../auth/operations';
+import { ContactState } from '../../components/App/App.types';
 
 const initialState: ContactState = {
   items: [],
